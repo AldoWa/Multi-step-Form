@@ -16,12 +16,7 @@ import { ref } from 'vue'
 import Step from './Step.vue'
 import Divisor from './Divisor.vue'
 
-enum Steps {
-  step1 = 1,
-  step2 = 2,
-  step3 = 3,
-  step4 = 4,
-}
+import { Steps } from '../../types/consts'
 
 interface StepsProps {
   actualStep: number

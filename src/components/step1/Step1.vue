@@ -32,6 +32,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+
 import Input from './Input.vue';
 
 const personalInformation = ref({
