@@ -1,28 +1,28 @@
 <template>
   <div class="grid grid-cols-2 gap-6 mt-6">
     <Input 
-      label="Nome" 
-      v-model="personalInformation.nome"
+      label="Full name" 
+      v-model="personalInformationLocal.name"
       type="text"
       placeholder="Richard Rasmunse"
     />
     <Input 
       label="Email Address" 
-      v-model="personalInformation.email"
+      v-model="personalInformationLocal.email"
       type="email"
       autocomplete="email"
       placeholder="name@email.com"
     />
     <Input 
       label="Phone Number" 
-      v-model="personalInformation.phone"
+      v-model="personalInformationLocal.phone"
       type="text"
       autocomplete="tel"
       placeholder="(79) 988129628"
     />
     <Input 
       label="Github Link" 
-      v-model="personalInformation.github"
+      v-model="personalInformationLocal.githubLink"
       type="text"
       autocomplete="url"
       placeholder="github.com/richardrasmunse"
@@ -31,15 +31,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import {  ref, watch } from 'vue';
 
 import Input from './Input.vue';
+import { DataProvide } from '../../types/provide';
 
-const personalInformation = ref({
-  nome: '',
+import useInject from '../../composables/inject';
+
+type PersonalInformation = DataProvide['personalInformation']
+
+const personalInformationLocal = ref<PersonalInformation>({
+  name: '',
   email: '',
   phone: '',
-  github: '',
+  githubLink: '',
 })
+
+watch(personalInformationLocal, (newVal: PersonalInformation) => {
+  changePersonalInformation(newVal)
+}, { deep: true })
+
+const { changePersonalInformation } = useInject()
 
 </script>

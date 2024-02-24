@@ -30,7 +30,9 @@ import FooterSteps from './components/shared/FooterSteps.vue';
 
 import { Steps } from './types/consts'
 
-const actualStep = ref("1")
+import useProvider from './composables/provider'
+
+const actualStep = ref(`${Steps.step1}`)
 
 const components = ref([
   {
@@ -55,5 +57,6 @@ const components = ref([
   }
 ])
 
+useProvider()
 </script>
 
