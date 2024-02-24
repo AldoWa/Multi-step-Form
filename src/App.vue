@@ -10,6 +10,10 @@
         :descripton="components[+actualStep - 1].description"
       />
       <Step1></Step1>
+      <div class="w-full h-[1px] bg-gray-200 my-8"></div>
+      <FooterSteps 
+        :actualStep="+actualStep"
+      />
     </div>
   </div>
 </template>
@@ -22,6 +26,7 @@ import StepsComponent from './components/header-steps/Steps.vue'
 import Step1 from './components/step1/Step1.vue'
 
 import TitleSteps from './components/shared/TitleSteps.vue';
+import FooterSteps from './components/shared/FooterSteps.vue';
 
 import { Steps } from './types/consts'
 
