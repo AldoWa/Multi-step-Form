@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 gap-x-10 gap-y-6">
+  <Container>
     <CustomCheckbox 
       label="HTML/CSS/JS"
       v-model="valueLocal"
@@ -14,7 +14,7 @@
     />
 
     <CustomCheckbox 
-      label="AngularJS"
+      label="AngularJs"
       v-model="valueLocal"
       :isChecked="valueLocal === 'angular'"
       name="angular"
@@ -25,12 +25,13 @@
       :isChecked="valueLocal === 'vue'"
       name="vue"
     />
-  </div>
+  </Container>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
 import CustomCheckbox from './CustomCheckbox.vue';
+import Container from '../shared/Container.vue';
 
 const valueLocal = ref('')
 

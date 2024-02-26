@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 gap-x-10 gap-y-6">
+  <Container>
     <SkillCard 
       skill="Beginner"
       :isSelected="data.skill === 'Beginner'"
@@ -24,13 +24,17 @@
       :isSelected="data.skill === 'Expert'"
       @click="handleClickSkill('Expert')"
     />
-  </div>
+  </Container>
 </template>
 
 <script setup lang="ts">
 import SkillCard from './SkillCard.vue'
+
 import useInject from '../../composables/inject.ts'
+
 import { Skill } from '../../types/consts';
+
+import Container from '../shared/Container.vue';
 
 const { changeSkill, data } = useInject()
 
