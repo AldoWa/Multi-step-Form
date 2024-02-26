@@ -31,15 +31,16 @@ import StepsComponent from './components/header-steps/Steps.vue'
 import Step1 from './components/step1/Step1.vue'
 import Step2 from './components/step2/Step2.vue'
 import Step3 from './components/step3/Step3.vue'
+import Step4 from './components/step4/Step4.vue'
 
 import TitleSteps from './components/shared/TitleSteps.vue';
 import FooterSteps from './components/shared/FooterSteps.vue';
 
 import { Steps } from './types/consts'
 
-import useProvider from './composables/provider'
+import useProvider from './composables/provide'
 
-const actualStep = ref(`${Steps.step3}`)
+const actualStep = ref(`${Steps.step1}`)
 
 const components = ref([
   {
@@ -60,7 +61,7 @@ const components = ref([
   {
     title: 'Review and Confirm',
     description: 'Please review your information to make sure everything is accurate.',
-    step: Steps.step4
+    step: shallowRef(Step4)
   }
 ])
 

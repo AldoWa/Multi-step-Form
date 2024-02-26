@@ -8,8 +8,8 @@
       @click="() => emit('click', 'back')"
     >Go Back</Button>
     <Button
-      :type="stepIsLast ? 'submit' : 'button'"
-      @click="() => emit('click', 'next')"
+      type="button"
+      @click.prevent="goToNextStep"
     >{{ stepIsLast ? 'Submit' : 'Next Step' }}</Button>
   </footer>
 </template>
@@ -36,6 +36,10 @@ const isFirstStep = computed(() => {
 const stepIsLast = computed(() => {
   return props.actualStep === Steps.step4;
 })
+
+const goToNextStep = () => {
+  emit('click', 'next')
+}
 
 const emit = defineEmits<FooterStepsEmit>()
 
