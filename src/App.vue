@@ -9,17 +9,22 @@
         :title="components[+actualStep - 1].title"
         :descripton="components[+actualStep - 1].description"
       />
-      <Step2></Step2>
+      <KeepAlive :max="4">
+        <component
+          :is="components[+actualStep - 1].step"
+        />
+      </KeepAlive>
       <div class="w-full h-[1px] bg-gray-200 my-8"></div>
       <FooterSteps 
         :actualStep="+actualStep"
+        @click="changeSteps"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, shallowRef } from 'vue';
 
 import StepsComponent from './components/header-steps/Steps.vue'
 
@@ -33,18 +38,18 @@ import { Steps } from './types/consts'
 
 import useProvider from './composables/provider'
 
-const actualStep = ref(`${Steps.step2}`)
+const actualStep = ref(`${Steps.step1}`)
 
 const components = ref([
   {
     title: 'Personal Information',
     description: 'Please provide your personal details so we can get to know you better.',
-    step: Steps.step1
+    step: shallowRef(Step1)
   },
   {
     title: 'Skill Level',
     description: 'Please tell us about your skill level in frontend development.',
-    step: Steps.step2
+    step: shallowRef(Step2)
   },
   {
     title: 'Challenge Preference',
@@ -57,6 +62,14 @@ const components = ref([
     step: Steps.step4
   }
 ])
+
+function changeSteps(type: 'back' | 'next') {
+  if(type === 'back') {
+    actualStep.value = `${+actualStep.value - 1}`
+    return;
+  } 
+  actualStep.value = `${+actualStep.value + 1}`
+}
 
 useProvider()
 </script>

@@ -5,9 +5,11 @@
     <Button
       variant="outline"
       v-if="!isFirstStep"
+      @click="() => emit('click', 'back')"
     >Go Back</Button>
     <Button
       :type="stepIsLast ? 'submit' : 'button'"
+      @click="() => emit('click', 'next')"
     >{{ stepIsLast ? 'Submit' : 'Next Step' }}</Button>
   </footer>
 </template>
@@ -21,6 +23,10 @@ interface FooterStepsProps {
   actualStep: number;
 }
 
+interface FooterStepsEmit {
+  (e: 'click', type: 'back' | 'next'): void
+}
+
 const props = defineProps<FooterStepsProps>()
 
 const isFirstStep = computed(() => {
@@ -30,5 +36,7 @@ const isFirstStep = computed(() => {
 const stepIsLast = computed(() => {
   return props.actualStep === Steps.step4;
 })
+
+const emit = defineEmits<FooterStepsEmit>()
 
 </script>

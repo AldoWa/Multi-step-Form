@@ -1,6 +1,7 @@
 <template>
-  <button class="flex border border-gray-300 rounded-[10px] py-4 px-[18px] items-center"
+  <button class="flex border rounded-[10px] py-4 px-[18px] items-center"
     @click="emit('click', skill)"
+    :class="isSelected ? 'border-[#FC6C4C]':'border-gray-300'"
   >
     <div class="block rounded-full bg-[#FC6C4C] p-2">
       <component 
@@ -20,8 +21,9 @@
   import { Skill } from '../../types/consts.ts'
 
   interface SkillCardProps {
-    icon: "Compass" | "Vegetable" | "Rocket" | "Trophy"
-    skill: Skill
+    icon: "Compass" | "Vegetable" | "Rocket" | "Trophy";
+    skill: Skill;
+    isSelected?: boolean;
   }
 
   interface SkillCardEmits {
