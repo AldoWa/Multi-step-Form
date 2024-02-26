@@ -29,10 +29,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import CustomCheckbox from './CustomCheckbox.vue';
 import Container from '../shared/Container.vue';
 
-const valueLocal = ref('')
+import useInject from '../../composables/inject';
+import { Preference } from '../../types/consts';
+
+const valueLocal = ref<Preference>('react')
+
+const { changePreference } = useInject()
+
+watch(valueLocal, (newVal: Preference) => {
+  changePreference(newVal)
+})
 
 </script>

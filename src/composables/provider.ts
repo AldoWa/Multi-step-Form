@@ -10,19 +10,25 @@ export default function useProvider () {
       githubLink: '',
     },
     skill: 'Beginner',
+    preference: 'html'
   })
   
   const changePersonalInformation = (personalInformation: DataProvide['personalInformation']) => {
-    data.value.personalInformation = personalInformation
+    data.value.personalInformation = personalInformation;
   }
 
   const changeSkill = (skill: DataProvide['skill']) => {
-    data.value.skill = skill
+    data.value.skill = skill;
+  }
+
+  const changePreference = (preference: DataProvide['preference']) => {
+    data.value.preference = preference;
   }
 
   provide<MultiStepProvide>('data', {
     data,
     changePersonalInformation,
-    changeSkill
+    changeSkill,
+    changePreference
   })
 }

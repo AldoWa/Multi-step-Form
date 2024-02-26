@@ -1,5 +1,5 @@
 import { Ref } from "vue";
-import { Skill } from "./consts";
+import { Preference, Skill } from "./consts";
 
 export type DataProvide = {
   personalInformation: {
@@ -9,10 +9,12 @@ export type DataProvide = {
     githubLink: string;
   }
   skill: Skill;
+  preference: Preference
 }
 
 export type MultiStepProvide = {
   data: Ref<DataProvide>;
   changePersonalInformation: (personalInformation: DataProvide['personalInformation']) => void;
   changeSkill: (level: DataProvide['skill']) => void;
+  changePreference: (preference: DataProvide['preference']) => void;
 }

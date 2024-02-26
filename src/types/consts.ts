@@ -6,3 +6,5 @@ export enum Steps {
 }
 
 export type Skill = "Beginner" | "Intermediate" | "Advanced" | "Expert"
+
+export type Preference = 'html' | 'react' | 'angular' | 'vue'
