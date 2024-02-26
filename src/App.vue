@@ -30,6 +30,7 @@ import StepsComponent from './components/header-steps/Steps.vue'
 
 import Step1 from './components/step1/Step1.vue'
 import Step2 from './components/step2/Step2.vue'
+import Step3 from './components/step3/Step3.vue'
 
 import TitleSteps from './components/shared/TitleSteps.vue';
 import FooterSteps from './components/shared/FooterSteps.vue';
@@ -38,7 +39,7 @@ import { Steps } from './types/consts'
 
 import useProvider from './composables/provider'
 
-const actualStep = ref(`${Steps.step1}`)
+const actualStep = ref(`${Steps.step3}`)
 
 const components = ref([
   {
@@ -54,7 +55,7 @@ const components = ref([
   {
     title: 'Challenge Preference',
     description: 'Please tell us which frontend challenges you would like to participate in.',
-    step: Steps.step3
+    step: shallowRef(Step3)
   },
   {
     title: 'Review and Confirm',
