@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 gap-6 mt-6">
+  <div class="grid grid-cols-2 gap-6">
     <Input 
       label="Full name" 
       v-model="personalInformationLocal.name"

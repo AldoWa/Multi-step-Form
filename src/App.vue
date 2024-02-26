@@ -9,7 +9,7 @@
         :title="components[+actualStep - 1].title"
         :descripton="components[+actualStep - 1].description"
       />
-      <Step1></Step1>
+      <Step2></Step2>
       <div class="w-full h-[1px] bg-gray-200 my-8"></div>
       <FooterSteps 
         :actualStep="+actualStep"
@@ -24,6 +24,7 @@ import { ref } from 'vue';
 import StepsComponent from './components/header-steps/Steps.vue'
 
 import Step1 from './components/step1/Step1.vue'
+import Step2 from './components/step2/Step2.vue'
 
 import TitleSteps from './components/shared/TitleSteps.vue';
 import FooterSteps from './components/shared/FooterSteps.vue';
@@ -32,7 +33,7 @@ import { Steps } from './types/consts'
 
 import useProvider from './composables/provider'
 
-const actualStep = ref(`${Steps.step1}`)
+const actualStep = ref(`${Steps.step2}`)
 
 const components = ref([
   {
