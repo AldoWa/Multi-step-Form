@@ -27,12 +27,14 @@
       @input="emitValue"
       :value="modelValue"
       :placeholder="placeholder"
+      v-maska:[options]
     >
   </div>
 </template>
 
 <script setup lang="ts">
-
+import { vMaska } from 'maska'
+import { reactive } from 'vue';
 
 interface InputProps {
   label: string
@@ -40,9 +42,17 @@ interface InputProps {
   autocomplete?: string;
   type: string;
   placeholder: string;
+  mask?: string | string[];
 }
 
-defineProps<InputProps>()
+
+const props = defineProps<InputProps>()
+
+const options = reactive({
+  mask: props.mask,
+  eager: true
+})
+
 const emit = defineEmits(['update:modelValue'])
 
 function emitValue(e: Event) {

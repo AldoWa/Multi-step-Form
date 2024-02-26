@@ -16,9 +16,10 @@
     <Input 
       label="Phone Number" 
       v-model="personalInformationLocal.phone"
-      type="text"
+      type="tel"
       autocomplete="tel"
       placeholder="(79) 988129628"
+      :mask="['(##) #####-####', '(##) ####-####']"
     />
     <Input 
       label="Github Link" 
