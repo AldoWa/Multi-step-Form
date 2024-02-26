@@ -1,13 +1,13 @@
 <template>
   <button class="flex border border-gray-300 rounded-[10px] py-4 px-[18px] items-center"
-    @click="emit('click', level)"
+    @click="emit('click', skill)"
   >
     <div class="block rounded-full bg-[#FC6C4C] p-2">
       <component 
         :is="icons[icon]"
       ></component>
     </div>
-    <span class="text-sm font-medium text-gray-900 ml-4">{{ level }}</span>
+    <span class="text-sm font-medium text-gray-900 ml-4">{{ skill }}</span>
   </button>
 </template>
 
@@ -17,15 +17,15 @@
   import Rocket from './icons/Rocket.vue'
   import Trophy from './icons/Trophy.vue'
   
-  type Level = "Beginner" | "Intermediate" | "Advanced" | "Expert"
+  import { Skill } from '../../types/consts.ts'
 
   interface SkillCardProps {
     icon: "Compass" | "Vegetable" | "Rocket" | "Trophy"
-    level: Level
+    skill: Skill
   }
 
   interface SkillCardEmits {
-    (e: 'click', level: Level): void
+    (e: 'click', skill: Skill): void
   }
 
   const icons = {

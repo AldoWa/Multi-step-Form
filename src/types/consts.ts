@@ -4,3 +4,5 @@ export enum Steps {
   step3 = 3,
   step4 = 4,
 }
+
+export type Skill = "Beginner" | "Intermediate" | "Advanced" | "Expert"
