@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col" data-test="input-container">
     <label 
       htmlFor="input"
       class="text-sm font-medium text-[#111827] mb-2"
