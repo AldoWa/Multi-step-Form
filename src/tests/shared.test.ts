@@ -118,7 +118,7 @@ describe('Shared', () => {
     })
   })
 
-  describe('Title Steps', () => {
+  describe('TitleSteps', () => {
     it('Should match with the snapshot', () => {
       expect(mount(TitleSteps).html()).toMatchSnapshot()
     })
