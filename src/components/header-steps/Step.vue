@@ -1,6 +1,7 @@
 <template>
   <div class="w-9 h-9 rounded-full flex items-center justify-center"
     :class="isActualStep ? 'bg-[#FC6C4C]' : 'bg-[#E5E7EB]'"
+    data-testid="step"
   >
     <span :class="isActualStep ? 'text-white' : 'text-[#111827]'"
     >{{ step }}</span>

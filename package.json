@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest --dom"
   },
   "dependencies": {
     "happy-dom": "^6.0.4",

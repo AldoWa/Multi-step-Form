@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header Steps > Step > Should render the component 1`] = `"<div class="w-9 h-9 rounded-full flex items-center justify-center bg-[#E5E7EB]" data-testid="step"><span class="text-[#111827]">1</span></div>"`;
