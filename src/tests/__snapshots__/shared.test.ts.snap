@@ -1,3 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Shared > Button > Should match with the snapshot 1`] = `"<button class="py-[10px] px-[26px] rounded-lg font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#FC6C4C] focus:ring-opacity-50 transition-all duration-200 ease-in-out bg-[#FC6C4C] text-white" type="button" data-testid="button">Button</button>"`;
+
+exports[`Shared > Container > Should match with the snapshot 1`] = `"<div class="grid grid-cols-2 gap-x-10 gap-y-6"></div>"`;

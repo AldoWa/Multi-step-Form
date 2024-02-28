@@ -3,6 +3,7 @@ import { mount } from '@vue/test-utils'
 import { it, describe, expect } from 'vitest'
 
 import Button from '../components/shared/Button.vue'
+import Container from '../components/shared/Container.vue'
 
 describe('Shared', () => {
   describe('Button', () => {
@@ -45,4 +46,10 @@ describe('Shared', () => {
       expect(button.html()).toMatchSnapshot()
     })
   }) 
+
+  describe('Container', () => {
+    it('Should match with the snapshot', () => {
+      expect(mount(Container).html()).toMatchSnapshot()
+    })
+  })
 })
