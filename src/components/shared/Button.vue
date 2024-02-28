@@ -2,6 +2,7 @@
   <button 
     :class="cn(buttonVariants({ variant: props.variant, class: props.class }))"
     :type="type"
+    data-testid="button"
   >
     <slot></slot>
   </button>
