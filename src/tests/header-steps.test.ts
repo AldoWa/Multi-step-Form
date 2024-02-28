@@ -24,7 +24,7 @@ describe('Header Steps', () => {
         }
       })
 
-      expect(wrapper.get('[data-testid="step"]').text()).toBe('2')
+      expect(wrapper.get('[data-test="step"]').text()).toBe('2')
     })
 
     it('Should render the actualStep', () => {
@@ -35,7 +35,7 @@ describe('Header Steps', () => {
         }
       })
 
-      expect(wrapper.get('[data-testid="step"]').classes()).toContain('bg-[#FC6C4C]')
+      expect(wrapper.get('[data-test="step"]').classes()).toContain('bg-[#FC6C4C]')
     })
   })
 })

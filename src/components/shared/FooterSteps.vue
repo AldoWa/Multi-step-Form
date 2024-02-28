@@ -1,15 +1,18 @@
 <template>
   <footer class="flex"
     :class="isFirstStep ? 'justify-end' : 'justify-between'"
+    data-test="footer-steps"
   >
     <Button
       variant="outline"
       v-if="!isFirstStep"
       @click="() => emit('click', 'back')"
+      data-test="footer-steps-back"
     >Go Back</Button>
     <Button
       type="button"
       @click.prevent="goToNextStep"
+      data-test="footer-steps-next"
     >{{ stepIsLast ? 'Submit' : 'Next Step' }}</Button>
   </footer>
 </template>
