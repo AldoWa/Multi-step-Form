@@ -1,3 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Step 1 > Input > Should match with the snapshot 1`] = `"<div class="flex flex-col" data-test="input-container"><label for="input" class="text-sm font-medium text-[#111827] mb-2">Name Label</label><input class="border-2 border-gray-300 rounded-[10px] h-10 p-2 focus:outline-none focus:ring-2 focus:ring-[#FC6C4C] focus:border-transparent placeholder-gray-400 hover:cursor-pointer" type="text" name="input" id="input" placeholder="Name Placeholder"></div>"`;
+
+exports[`Step 1 > Step 1 > Should match with the snapshot 1`] = `
+"<div class="grid grid-cols-2 gap-6">
+  <div class="flex flex-col" data-test="input-container"><label for="input" class="text-sm font-medium text-[#111827] mb-2">Full name</label><input class="border-2 border-gray-300 rounded-[10px] h-10 p-2 focus:outline-none focus:ring-2 focus:ring-[#FC6C4C] focus:border-transparent placeholder-gray-400 hover:cursor-pointer" type="text" name="input" id="input" placeholder="Richard Rasmunse"></div>
+  <div class="flex flex-col" data-test="input-container"><label for="input" class="text-sm font-medium text-[#111827] mb-2">Email Address</label><input class="border-2 border-gray-300 rounded-[10px] h-10 p-2 focus:outline-none focus:ring-2 focus:ring-[#FC6C4C] focus:border-transparent placeholder-gray-400 hover:cursor-pointer" type="email" name="input" id="input" autocomplete="email" placeholder="name@email.com"></div>
+  <div class="flex flex-col" data-test="input-container"><label for="input" class="text-sm font-medium text-[#111827] mb-2">Phone Number</label><input class="border-2 border-gray-300 rounded-[10px] h-10 p-2 focus:outline-none focus:ring-2 focus:ring-[#FC6C4C] focus:border-transparent placeholder-gray-400 hover:cursor-pointer" type="tel" name="input" id="input" autocomplete="tel" placeholder="(79) 988129628"></div>
+  <div class="flex flex-col" data-test="input-container"><label for="input" class="text-sm font-medium text-[#111827] mb-2">Github Link</label><input class="border-2 border-gray-300 rounded-[10px] h-10 p-2 focus:outline-none focus:ring-2 focus:ring-[#FC6C4C] focus:border-transparent placeholder-gray-400 hover:cursor-pointer" type="text" name="input" id="input" autocomplete="url" placeholder="github.com/richardrasmunse"></div>
+</div>"
+`;

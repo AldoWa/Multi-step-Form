@@ -1,7 +1,9 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vitest } from "vitest";
+
+import { mount } from "@vue/test-utils";
 
 import Input from "../components/step1/Input.vue";
-import { mount } from "@vue/test-utils";
+import Step1 from "../components/step1/Step1.vue";
 
 describe("Step 1", () => {
   describe('Input', () => {
@@ -53,6 +55,65 @@ describe("Step 1", () => {
       })
 
       expect(input.html()).toMatchSnapshot()
+    })
+  })
+
+  describe('Step 1', () => {
+    /**
+     * It's not recommended to acess vm directly, but in this case, it's necessary to test the provider
+     */
+    it('Should add data to the provider', async () => {
+      const wrapper = mount(Step1, {
+        global: {
+          provide: {
+            data: {
+              changePersonalInformation: vitest.fn((value) => {
+                wrapper.vm.$.provides.data.personalInformation = value
+              }),
+              changeSkill: vitest.fn(),
+              changePreference: vitest.fn(),
+              personalInformation: {
+                name: '',
+                email: '',
+                phone: '',
+                githubLink: ''
+              }
+            }
+          }
+        }
+      })
+
+      const [name,email, phone, githubLink] = wrapper.findAll('input')
+
+      await name.setValue('Name')
+      await email.setValue('email@email.com')
+      await phone.setValue('799999999')
+      await githubLink.setValue('Link')
+
+      expect(wrapper.vm.$.provides.data.personalInformation).toEqual({
+        name: 'Name',
+        email: 'email@email.com',
+        phone: '(79) 9999-999',
+        githubLink: 'Link'
+      })
+    })
+
+    it('Should match with the snapshot', async () => {
+      const wrapper = mount(Step1, {
+        global: {
+          provide: {
+            data: {
+              personalInformation: {
+                name: '',
+                email: '',
+                phone: '',
+                githubLink: ''
+              }
+            }
+          }
+        }
+      })
+      expect(wrapper.html()).toMatchSnapshot()
     })
   })
 })

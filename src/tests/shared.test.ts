@@ -98,7 +98,7 @@ describe('Shared', () => {
       const footerStepsBack = footerSteps.find('[data-test="footer-steps-back"]')
 
       footerStepsBack.trigger('click')
-      expect(footerSteps.emitted('click')[0]).toEqual(['back'])
+      expect(footerSteps.emitted('click')![0]).toEqual(['back'])
     })
 
     it('Should emit "click" event with "next" property', () => {
@@ -114,13 +114,22 @@ describe('Shared', () => {
     })
 
     it('Should match with the snapshot', () => {
-      expect(mount(FooterSteps).html()).toMatchSnapshot()
+      expect(mount(FooterSteps, {
+        props: {
+          actualStep: 1 
+        }
+      }).html()).toMatchSnapshot()
     })
   })
 
   describe('TitleSteps', () => {
     it('Should match with the snapshot', () => {
-      expect(mount(TitleSteps).html()).toMatchSnapshot()
+      expect(mount(TitleSteps, {
+        props: {
+          title: 'Step 1',
+          descripton: 'Step 1 description'
+        }
+      }).html()).toMatchSnapshot()
     })
   })
 })

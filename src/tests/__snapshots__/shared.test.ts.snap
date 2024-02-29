@@ -4,18 +4,15 @@ exports[`Shared > Button > Should match with the snapshot 1`] = `"<button class=
 
 exports[`Shared > Container > Should match with the snapshot 1`] = `"<div class="grid grid-cols-2 gap-x-10 gap-y-6"></div>"`;
 
-exports[`Shared > FooterSteps > Should match with the snapshot 1`] = `"<footer class="flex justify-between" data-test="footer-steps"><button class="py-[10px] px-[26px] rounded-lg font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#FC6C4C] focus:ring-opacity-50 transition-all duration-200 ease-in-out bg-transparent border-2 border-[#FC6C4C] text-[#FC6C4C]" type="button" data-test="footer-steps-back">Go Back</button><button class="py-[10px] px-[26px] rounded-lg font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#FC6C4C] focus:ring-opacity-50 transition-all duration-200 ease-in-out bg-[#FC6C4C] text-white" type="button" data-test="footer-steps-next">Next Step</button></footer>"`;
-
-exports[`Shared > Title Steps > Should match with the snapshot 1`] = `
-"<div class="mb-6">
-  <h1 class="font-medium text-2xl mb-1"></h1>
-  <p class="text-sm text-[#6B7280] font-normal"></p>
-</div>"
+exports[`Shared > FooterSteps > Should match with the snapshot 1`] = `
+"<footer class="flex justify-end" data-test="footer-steps">
+  <!--v-if--><button class="py-[10px] px-[26px] rounded-lg font-medium text-sm focus:outline-none focus:ring-2 focus:ring-[#FC6C4C] focus:ring-opacity-50 transition-all duration-200 ease-in-out bg-[#FC6C4C] text-white" type="button" data-test="footer-steps-next">Next Step</button>
+</footer>"
 `;
 
 exports[`Shared > TitleSteps > Should match with the snapshot 1`] = `
 "<div class="mb-6">
-  <h1 class="font-medium text-2xl mb-1"></h1>
-  <p class="text-sm text-[#6B7280] font-normal"></p>
+  <h1 class="font-medium text-2xl mb-1">Step 1</h1>
+  <p class="text-sm text-[#6B7280] font-normal">Step 1 description</p>
 </div>"
 `;
